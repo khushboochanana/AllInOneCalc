@@ -45,14 +45,14 @@ def index(request):
                 if len(subparts[0]) :
                     if(subparts[0][0] in symList):
                         part1= subparts[0]
-                        nextEq= str(part1[0])+ str(int(part1[1:len(part1)]))
+                        nextEq= str(part1[0])+ str(float(part1[1:len(part1)]))
                         print(nextEq,">nextEq")
                     else:   
                         print (subparts[0]) 
-                        nextEq= str(int(subparts[0]))
+                        nextEq= str(float(subparts[0]))
                     print (nextEq,">?>?>?>?")
                 elif (len(subparts[1])):
-                    nextEq= sym + str(int(subparts[1]))
+                    nextEq= sym + str(float(subparts[1]))
 
                 output  = eval(output +  nextEq)
 

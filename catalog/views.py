@@ -33,22 +33,29 @@ def index(request):
         nextEq='0'
         symList=['+','-','/','*']
         sym= request.GET['sym']
-       
+
         if sym == 'del':
             resultInput=resultInput[0:len(resultInput)-1]
             equation=equation[0:len(equation)-1]
         else:
             subparts= resultInput.split(sym)
+            
             if(subparts and len(subparts)):
                 subparts.append(sym)
                 if len(subparts[0]) :
                     if(subparts[0][0] in symList):
                         part1= subparts[0]
                         nextEq= str(part1[0])+ str(int(part1[1:len(part1)]))
-                    else:    
+                        print(nextEq,">nextEq")
+                    else:   
+                        print (subparts[0]) 
                         nextEq= str(int(subparts[0]))
-                    print (nextEq)
+                    print (nextEq,">?>?>?>?")
+                elif (len(subparts[1])):
+                    nextEq= sym + str(int(subparts[1]))
+
                 output  = eval(output +  nextEq)
+
             if(sym != '='):
                 resultInput=sym
                 equation += (sym +' ')

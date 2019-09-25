@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+</head>
+<style>
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .container {
+        display: flex;
+        border: solid grey;
+        min-height: 60vh;
+        min-width: 61.5vh;
+        max-width: 500px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .buttons {
+        display: flex;
+        min-height: 50vh;
+        width: 77%;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+
+    .actions {
+        display: flex;
+        min-height: 50vh;
+        width: 20%;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+
+    .equal {
+        display: flex;
+        border: solid 1px #9C27B0;
+        margin: 10px;
+        min-height: 5vh;
+        width: 100%;
+        text-align: center;
+
+        background: #4100ff24;
+        /* padding-left: 44%; */
+        font-size: 40px;
+    }
+
+    .actions button {
+        border: solid 1px #8BC34A;
+        margin: 10px 0 10px 0px;
+        text-align: center;
+        padding-top: 25%;
+        width: 80%;
+        background: #cddc397d;
+    }
+
+    .box {
+        width: 26%;
+        background: #9e9e9e33;
+        border: solid 1px grey;
+        margin: 10px;
+        text-align: center;
+        padding-top: 8%;
+    }
+  
+
+    .result {
+        height: 50px;
+        width: 100%;
+        border: 1px solid grey;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 1.5em;
+        background: #000;
+        color: #fff;
+        padding: 0 10px;
+    }
+
+    .result input {
+        width: 100%;
+        height: 30px;
+    }
+</style>
+
+<body>
+    <form class="container" id="calci_form" method="get" action="#">
+        <div class="equal"> Output : {{output}}</div>
+        <input type="hidden" value={{output}} name="output" />
+
+        <div class="equal">Equation : {{equation}}</div>
+        <input type="hidden" value={{equation}} name="equation" />
+        <div class="result">{{resultInput}}</div>
+        <input type="hidden" value={{resultInput}} name="resultInput" />
+        <button id="=" class="equal" name="sym" value="=" type="submit"> =
+        </button>
+        <div class="buttons">
+            <button id="7" name="numval" value="7" type="submit" class="box  "> 7
+            </button>
+            <button id="8" name="numval" value="8" type="submit" class="box  "> 8
+            </button>
+            <button id="9" name="numval" value="9" type="submit" class="box  "> 9
+            </button>
+            <button id="6" name="numval" value="6" type="submit" class="box  "> 6
+            </button>
+            <button id="5" name="numval" value="5" type="submit" class="box  "> 5
+            </button>
+            <button id="4" name="numval" value="4" type="submit" class="box  "> 4
+            </button>
+            <button id="1" name="numval" value="1" type="submit" class="box  "> 1
+            </button>
+            <button id="2" name="numval" value="2" type="submit" class="box  "> 2
+            </button>
+            <button id="3" name="numval" value="3" type="submit" class="box  "> 3
+            </button>
+            <button id="0" name="numval" value="0" type="submit" class="box  "> 0
+            </button>
+            <button id="dot" name="numval" value="." type="submit" class="box  "> .
+            </button>
+            <button id="open" name="numval" value="(" type="submit" class="box  "> (
+            </button>
+            <button id="close" name="numval" value=")" type="submit" class="box  "> )
+            </button>
+            <button id="clear" name="numval" value="clear" type="submit" class="box clear"> C
+            </button>
+        </div>
+        <div class="actions">
+            <button id="del" name="sym" value="del" type="submit" class="box"> DEL
+            </button>
+            <button id="+" name="sym" value="+" type="submit" class="box"> +
+            </button>
+            <button id="-" name="sym" value="-" type="submit" class="box"> -
+            </button>
+            <button id="/" name="sym" value="/" type="submit" class="box"> /
+            </button>
+            <button id="*" name="sym" value="*" type="submit" class="box"> *
+            </button>
+
+        </div>
+    </form>
+</body>
+
+</html>

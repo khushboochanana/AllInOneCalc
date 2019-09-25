@@ -8,20 +8,26 @@ def index(request):
     if 'equation' in request.GET:
         equation=request.GET['equation'] 
     else: 
-        equation ='0'
+        equation =''
 
     if 'resultInput' in request.GET:
         resultInput=request.GET['resultInput'] 
     else: 
-        resultInput ='0'
+        resultInput =''
 
     if 'output' in request.GET:
         output=request.GET['output'] 
     else: 
         output =''
     if 'numval' in request.GET:
-        resultInput +=request.GET['numval'] 
-        equation += (request.GET['numval'] +' ')
+        numVal=request.GET['numval'] 
+        if numVal == 'clear':
+            resultInput=""
+            equation=""
+            output=""
+        else :
+            resultInput +=numVal
+            equation += (numVal +' ')
 
     if 'sym' in request.GET:
         nextEq='0'

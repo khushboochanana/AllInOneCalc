@@ -41,13 +41,13 @@ def index(request):
             subparts= resultInput.split(sym)
             if(subparts and len(subparts)):
                 subparts.append(sym)
-                print(resultInput.split(sym) , resultInput, equation)
-                print(subparts,"subparts",resultInput)
                 if len(subparts[0]) :
                     if(subparts[0][0] in symList):
-                        nextEq= str(subparts[0])
+                        part1= subparts[0]
+                        nextEq= str(part1[0])+ str(int(part1[1:len(part1)]))
                     else:    
                         nextEq= str(int(subparts[0]))
+                    print (nextEq)
                 output  = eval(output +  nextEq)
             if(sym != '='):
                 resultInput=sym
